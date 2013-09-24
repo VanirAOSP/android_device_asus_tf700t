@@ -85,6 +85,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
 # Build kernel from source
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 TARGET_KERNEL_SOURCE := kernel/asus/tf700t
 TARGET_KERNEL_CONFIG := cyanogenmod_cardhu_defconfig
 
