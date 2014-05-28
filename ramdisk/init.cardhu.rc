@@ -37,6 +37,7 @@ on fs
     setprop ro.crypto.umount_sd false
     mount_all /fstab.cardhu
     restorecon /dev/block/platform/sdhci-tegra.3/by-name/PER
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
 
 on post-fs-data
     mkdir /data/misc/wifi 0770 wifi wifi
