@@ -160,6 +160,12 @@ on boot
     #write /sys/module/cpuidle_t3/parameters/lp2_0_in_idle 0
     write /sys/module/cpuidle/parameters/lp2_in_idle 0
 
+    write /sys/module/cpu_boost/parameters/boost_ms "20"
+    write /sys/module/cpu_boost/parameters/sync_threshold "1728000"
+    write /sys/module/cpu_boost/parameters/input_boost_freq "1497600"
+    write /sys/module/cpu_boost/parameters/input_boost_ms "40"
+    write /sys/module/cpu_boost/parameters/load_based_syncs 1
+
 # Interactive governor settings
     chown system system /sys/devices/system/cpu/cpufreq/interactive/go_maxspeed_load
     chown system system /sys/devices/system/cpu/cpufreq/interactive/max_boost
