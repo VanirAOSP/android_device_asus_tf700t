@@ -39,6 +39,7 @@ import android.util.Log;
 import android.util.Slog;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
+import android.os.UserHandle;
 
 import com.android.internal.os.DeviceKeyHandler;
 
@@ -212,8 +213,8 @@ public final class KeyHandler implements DeviceKeyHandler {
         // Consume the event if we are going to handle it. We don't want other subsystem can
         // handle it)
         if (event.getAction() != getScanCodeAction(event) || event.getRepeatCount() != 0) {
-            // Then mark as consumed
-            return true;
+            // Then don't mark as consumed
+            return false;
         }
 
         // Now check every type of scancode that we are able to handle
@@ -612,7 +613,7 @@ public final class KeyHandler implements DeviceKeyHandler {
         intent.putExtra(EXTRA_ASUSDEC_KEY, asusdeckey);
         intent.putExtra(EXTRA_ASUSDEC_STATUS, status);
         intent.putExtra(EXTRA_ASUSDEC_VALUE, value);
-        mContext.sendBroadcast(intent, PERMISSION_KEYPAD_RECEIVER);
+        mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT, PERMISSION_KEYPAD_RECEIVER);
     }
 
     private void notifyKey(int asusdeckey, int status) {
