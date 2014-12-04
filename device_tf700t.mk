@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
 # Build characteristics setting 
 PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_PREF_CONFIG := xlarge hdpi
 
 # This device has enough space for precise dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -93,9 +93,12 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudioutils \
     libinvensense_mpl \
+    AutoParts_tfp \
     blobpack_tfp \
     wifimacwriter \
-    mischelp
+    mischelp \
+    com.cyanogenmod.asusdec \
+    libasusdec_jni
 
 # Torch
 PRODUCT_PACKAGES += \
