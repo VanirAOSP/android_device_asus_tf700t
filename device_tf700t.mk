@@ -81,11 +81,9 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# This device has enough space for precise dalvik
-PRODUCT_TAGS += dalvik.gc.type-precise
-
 # Extra packages to build for this device
 PRODUCT_PACKAGES += \
+    camera.tegra \
     librs_jni \
     com.android.future.usb.accessory \
     make_ext4fs \
@@ -122,7 +120,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # media files
 PRODUCT_COPY_FILES += \
     device/asus/tf700t/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/asus/tf700t/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/asus/tf700t/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    device/asus/tf300t/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
